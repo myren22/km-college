@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--  randSeq.html			Kyle Myren    -->
+<!--  generate a random 3 char string  -->
+
+<html>
+ <head>
+	<title> Random Sequence </title>
+	<script type="text/javascript" src="http://balance3e.com/random.js"></script>
+	<script type="text/javascript">
+	function GenerateSequence()
+	{
+		sequence = 	RandomChar('abcdefghijklmnopqrstuvwxyz') +
+					RandomChar('abcdefghijklmnopqrstuvwxyz') +
+					RandomChar('abcdefghijklmnopqrstuvwxyz');
+					
+		document.getElementById('outputDiv').innerHTML =sequence;
+	}
+	</script>
+ </head>
+ 
+ <body>
+	<input type="button" value="Generate Sequence"
+		onclick="GenerateSequence();">
+	<div id="outputDiv"></div>
+ </body>
+</html>

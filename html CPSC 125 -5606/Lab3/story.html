@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--  story.html			Kyle Myren  -->
+<!--  Fill in the blank story 			-->
+
+<html>
+
+	<head>
+		<title> story.html </title> 
+	</head>
+
+	<body>
+		<div style="text-align:center"><h2> Exercise 5.5: Fill-in-the-Blank Story</h2></div>
+		<h3>Kyle Myren</h3>
+		
+		<p>1. Name 
+		<input type="text" id="mainChar">
+		</p>
+		<p>2. Verb
+		<input type="text" id="verb1">
+		</p>
+		<p>3. Verb
+		<input type="text" id="verb2">
+		</p>
+		<p>4. Sound
+		<input type="text" id="sound">
+		</p>
+		<p>5. Adjective
+		<input type="text" id="adjective">
+		</p>
+		<p>6. Place
+		<input type="text" id="place">
+		</p>
+		<p>7. Food
+		<input type="text" id="food">
+		</p>
+		
+		
+		<input type="button" value="Generate Story"
+			onclick="name=document.getElementById('mainChar').value;
+					verb1=document.getElementById('verb1').value;
+					verb2=document.getElementById('verb2').value;
+					sound=document.getElementById('sound').value;
+					adjective=document.getElementById('adjective').value;
+					place=document.getElementById('place').value;
+					food=document.getElementById('food').value;
+					document.getElementById('outputDiv').innerHTML=
+					'<p>This past week, infamous criminal ' + name + ' came rampaging through  the town ' +
+					place + '.</br> Despite repeated attempts at stopping him from ' + verb1 + ' he managed to ' + verb2 +
+					'.<br> People described him as ' + adjective + ', and having a habit of exclaiming ' + sound +
+					'.<br> The police managed to detain ' + name + ' when he choked on some ' + food + ' that he stole.</p>' +
+					'<p>The police chief reports that counter measures will be taken to prevent the escape of criminals like ' + name +
+					' from escaping in the future.</p>';">
+		<hr>			
+		<div id="outputDiv"></div>
+		
+	</body>
+</html>

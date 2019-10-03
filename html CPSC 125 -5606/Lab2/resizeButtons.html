@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--  resizeButtons.html			Kyle Myren    			-->
+<!--  This page has 1 image that is altered between sizes   -->
+
+<html>
+
+	<head>
+		<title> resizeButtons.html </title> 
+	</head>
+
+	<body>
+		<img id="dynamicPicture" src="smiley.gif" height=100 width=100>
+		<hr>
+		<input type="button" value="Large"
+			onmouseover="this.value='LARGE'"
+			onmouseout="this.value='Large'"
+			onclick="document.getElementById('dynamicPicture').width=200;
+					document.getElementById('dynamicPicture').height=200;"> 
+		
+		<input type="button" value="Small"
+			onmouseover="this.value='SMALL'"
+			onmouseout="this.value='Small'"
+			onclick="document.getElementById('dynamicPicture').width=100;
+					document.getElementById('dynamicPicture').height=100;">
+					
+		<input type="button" value="Smaller"
+			onclick="document.getElementById('dynamicPicture').width=
+					.9*document.getElementById('dynamicPicture').width;
+					document.getElementById('dynamicPicture').height=
+					.9*document.getElementById('dynamicPicture').height;">
+		<input type="button" value="Larger"
+			onclick="document.getElementById('dynamicPicture').width=
+					1.1*document.getElementById('dynamicPicture').width;
+					document.getElementById('dynamicPicture').height=
+					1.1*document.getElementById('dynamicPicture').height;">					
+	</body>	
+</html>

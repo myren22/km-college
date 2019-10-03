@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--  pictureComments.html			Kyle Myren    			-->
+<!--  This page has 1 image that is altered between sizes   -->
+
+<html>
+
+	<head>
+		<title> pictureComments.html </title> 
+	</head>
+
+	<body>		
+		<img src="smiley.gif" height=200 width=300
+			onmouseover="document.getElementById('pictureLabel').innerHTML=
+				'This image shows a young woman laughing and mouthing, ' +
+				'&#34;stop!&#34;';"
+			onmouseout="document.getElementById('pictureLabel').innerHTML=
+				'Please, move the mouse over a picture.';">
+		<img src="Putin.jpg" height=300 width=350
+			onmouseover="document.getElementById('pictureLabel').innerHTML=
+				'President Putin is one smooth man.';"
+			onmouseout="document.getElementById('pictureLabel').innerHTML=
+				'Please, move the mouse over a picture.';">
+		<img src="DesertFox.jpg" height=300 width=350
+			onmouseover="document.getElementById('pictureLabel').innerHTML=
+				'Awww... What a cute little desert fox.';"
+			onmouseout="document.getElementById('pictureLabel').innerHTML=
+				'Please, move the mouse over a picture.';">
+		<img src="LadiesPlease.png" height=300 width=300
+			onmouseover="document.getElementById('pictureLabel').innerHTML=
+				'Ladies, please. One at a time.';"
+			onmouseout="document.getElementById('pictureLabel').innerHTML=
+				'Please, move the mouse over a picture.';">
+		
+		<hr>
+		<div id="pictureLabel">
+			Please, move the mouse over a picture.
+		</div>
+	
+	</body>
+</html>

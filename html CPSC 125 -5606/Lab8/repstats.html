@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--  repstats.html			Kyle Myren  -->
+<!--  This page simulates dice rolls	-->
+
+<html>
+ <head>
+   <title> Dice Stats </title>
+   <script type="text/javascript" src="http://balance3e.com/random.js">
+   </script>
+   <script type="text/javascript">
+     function RollRepeatedly()
+     {
+       var totalRolls, doubleCount, repCount, roll1, roll2, count2, count7;
+              
+       totalRolls = parseFloat(document.getElementById('repsBox').value);
+       
+       count2 = 0;
+       count7 = 0;
+       doubleCount = 0;				
+       repCount = 0;
+       while (repCount < totalRolls) {         	
+			 roll1 = RandomInt(1, 6);          	
+			 roll2 = RandomInt(1, 6);
+			 if (roll1 == roll2) {                 	
+			   doubleCount = doubleCount + 1;      	
+			 }
+
+			 repCount = repCount + 1;
+			 if(roll1 + roll2 == 2)
+			 {
+			   count2 = count2 + 1;
+			 }
+			 
+			 if(roll1 + roll2 == 7)
+			 {
+			   count7 = count7 + 1;
+			 }
+       }
+												
+       document.getElementById('outputDiv').innerHTML = 
+           'The number of doubles obtained was ' + doubleCount + 
+           '<br>' + 'The number of 2s obtained was ' + count2 +
+           '<br>' + 'The number of 7s obtained was ' + count7;
+     }
+   </script>
+ </head>
+
+ <body>
+	   <h2>Dice Stats</h2>
+	   <p>
+		 Desired number of rolls: <input type="text" id="repsBox" size=6 value=1000>
+	   </p>
+	   <input type="button" value="Click to Roll" onclick="RollRepeatedly();"> 
+	   <hr>
+	   <div id="outputDiv"></div>
+ </body>
+</html>

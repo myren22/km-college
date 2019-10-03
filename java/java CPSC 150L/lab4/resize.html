@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--  luck2.html			Kyle Myren    			-->
+<!--  web pade generates a lucky number from a range  -->
+
+<html>
+
+	<head>
+		<title>Lucky Number </title> 
+		<script type="text/javascript">
+		 function GenerateNumber()
+		 // Assumes: minBox and maxBox define the range for the value
+		 // Results: picks a random number and displays it in outputDiv
+		 {
+		 	 min=parseFloat(document.getElementById('minBox').value;
+		 	 max=parseFloat(document.getElementById('maxBox').value;
+		 	 number=Math.floor(Math.random()*(max-min+1))+min;
+		 	 document.getElementById('minBox').innerHTML=
+		 	 'your lucky number is ' + number;
+		 }
+		 </script>
+	</head>
+
+	<body>
+		<h2>Luck Number</h2>
+		<p>
+		 Number are selected between
+		 <input type ="text" id="minBox" size=3 value-0>
+		 and<input type="text" id="maxBox" size=3 value=9>.
+		 </p>
+		 <input type="button" value="Generate Lucky Number"
+		 	onlcick="GenerateNumber();">
+		 <hr>
+		 <div id="outputDiv"></div> 
+			
+	</body>
+
+</html>

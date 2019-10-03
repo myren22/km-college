@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--  metric.html			Kyle Myren    -->
+<!--  This page converts between metric and english measurements  -->
+
+<html>
+ <head>
+	<title> Metric Conversion </title>
+	<script type="text/javascript" src="convert.js"></script>
+	<script type="text/javascript">
+	function ConvertToCm()
+	// Assumes: inchBox contains a distance in inches
+	// Results: displays the distance in centimeters in outputDiv
+	{
+		var inches, cm;
+		
+		inches = parseFloat(document.getElementById('inchBox').value);
+		cm = InchesToCentimeters(inches);
+		document.getElementById('outputDiv').innerHTML =
+			'That is ' + cm + ' centimeters.';
+	}
+	</script>
+	
+	<script type="text/javascript">
+	function ConvertToInches()
+	// Assumes: centimeterBox contains a distance in centimeters
+	// Results: displays the distance in inches in outputDiv
+	{
+		var inches, cm;
+		
+		cm = parseFloat(document.getElementById('centimeterBox').value);
+		inches = CentimetersToInches(cm);
+		document.getElementById('outputDiv').innerHTML =
+			'That is ' + inches + ' inches.';
+	}
+	</script>
+
+ </head>
+ 
+ 
+ <body>
+		<p>
+		 Length in inches:
+			<input type="text" id="inchBox" size=6 value=1>
+			<input type="button" value="Convert to Centimeters"
+				onclick="ConvertToCm();">
+		</p>
+		<p>
+		 Length in centimeters:
+			<input type="text" id="centimeterBox" size=6 value=1>
+			<input type="button" value="Convert to Inches"
+				onclick="ConvertToInches();">
+		</p>
+		
+		<hr>
+		<div id="outputDiv"></div>
+ </body>
+ </html>

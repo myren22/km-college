@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--  stats.html			Kyle Myren    -->
+<!--  THis page simulates a dice rolls and keeps a roll count -->
+
+<html>
+ <head>
+	<title> Die Rolls </title>
+	<script type="text/javascript" src="http://balance3e.com/random.js"></script>
+	<script type="text/javascript">
+	function RollDice()
+	//Assumes: die images are in http://balance3e.com/Images
+	//Results: displays 2 random die rolls and keeps a count in rollSpan
+	{
+		var roll1, roll2;
+		
+		roll1= RandomInt(1, 6);
+		roll2= RandomInt(1, 6);
+		
+		document.getElementById('die1Img').src = 
+			'http://balance3e.com/Images/die' + roll1 + '.gif';
+		document.getElementById('die2Img').src = 
+			'http://balance3e.com/Images/die' + roll2 + '.gif';
+		
+		document.getElementById('rollSpan').innerHTML = 
+			parseFloat(document.getElementById('rollSpan').innerHTML) + 1;
+		
+		//testing for doubles
+		if (roll1==roll2)
+			{
+			document.getElementById('identicalSpan').innerHTML = 
+				parseFloat(document.getElementById('identicalSpan').innerHTML) + 1;
+			}
+		
+		//testing for die sum of seven
+		if (roll1+roll2==7)
+			{
+			document.getElementById('sevenSpan').innerHTML = 
+				parseFloat(document.getElementById('sevenSpan').innerHTML) + 1;
+			}
+		
+		//testing for natural sevens with 2 if statements
+		if (roll1==3 && roll2==4)
+			{
+			document.getElementById('naturalSevenSpan').innerHTML = 
+				parseFloat(document.getElementById('naturalSevenSpan').innerHTML) + 1;
+			}
+		if (roll1==4 && roll2==3)
+			{
+			document.getElementById('naturalSevenSpan').innerHTML = 
+				parseFloat(document.getElementById('naturalSevenSpan').innerHTML) + 1;
+			}
+	}
+	</script>
+ </head>
+ 
+ <body>
+	<div style="text-align:center">
+		<p>
+			<img id="die1Img" alt="die image"
+				src="http://balance3e.com/Images/die1.gif">
+			<img id="die2Img" alt="die image"
+				src="http://balance3e.com/Images/die1.gif">
+		</p>
+		
+		<input type="button" value="Click to Roll" onclick="RollDice();">
+		
+		<input type="button" value="Reset Counters" 
+			onclick="document.getElementById('rollSpan').innerHTML = 0;
+			document.getElementById('identicalSpan').innerHTML = 0;
+			document.getElementById('sevenSpan').innerHTML = 0;
+			document.getElementById('naturalSevenSpan').innerHTML = 0;">
+		<hr>
+		<p>
+		 Number of Rolls: <span id="rollSpan">0</span>
+		 </p>
+		 <p>
+		 Number of doubles: <span id="identicalSpan">0</span>
+		 </p>
+		 <p>
+		 Number of sevens: <span id="sevenSpan">0</span>
+		 </p>
+		 <p>
+		 Number of natural sevens: <span id="naturalSevenSpan">0</span>
+		 </p>
+	</div>
+ </body>
+</html>

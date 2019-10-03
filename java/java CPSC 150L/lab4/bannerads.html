@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--  luck2.html			Kyle Myren    			-->
+<!--  this page displays banner ads that change at regular intervals    -->
+
+<html>
+
+	<head>
+		<title>Random Banner Ads </title> 
+		<script type="text/javascript">
+		 function SelectAd()
+		 // Assumes: banner ads ad0.gif ad1.gif and ad2.gif are stored in http://balance3r.com/images
+		 // Results: displays the banner ad image in the page
+		 {
+		 	adNum = Math.floor(4*Math.random());
+		 	document.getElementById('adImg').src=
+		 	 'http://balance3r.com/Images/ad' + adNum + '.gif'
+		 }
+		 </script>
+	</head>
+
+	<body onload="setInterval('SelectAD()', 5000);">
+		<div style="text-align:center">
+			<img id="adImg" alt="banner ad"
+				src="http://balance3r.com/Images/ad0.gif">
+		</div>
+		<p>
+		 Contents of the Page.
+		</p>	
+	</body>
+
+</html>

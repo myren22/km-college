@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--  round.html			Kyle Myren    			-->
+<!--  rounds a number to one decimal place -->
+
+<html>
+	<head>
+		<title>Number Rounder</title> 
+		<script type="text/javascript">
+		 function Rounder()
+		 //Assumes:
+		 //Results:
+		 {
+			var number
+			
+			number=parseFloat(document.getElementById('numberBox').value);
+			rounded=Math.round(number*10)/10;
+			document.getElementById('outputDiv').innerHTML=
+				number + ' rounded to one decimal place is ' + rounded;
+		 }
+		 </script>
+	</head>
+	
+	<body>
+		<h2>Number Rounder</h2>
+		<p>
+			Enter a number: <input type="text" id="numberBox" size=12 value=3.14159>
+		</p>
+		<input type="button" value="Round It"
+			onclick="Rounder();">						
+		<hr>
+		<div id="outputDiv"></div>	
+	</body>
+</html>

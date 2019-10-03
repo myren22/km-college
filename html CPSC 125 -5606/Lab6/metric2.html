@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!--  metric.html			Kyle Myren    -->
+<!--  This page converts between metric and english measurements  -->
+
+<html>
+ <head>
+	<title> Metric Conversion </title>
+	<script type="text/javascript" src="convert.js"></script>
+	<script type="text/javascript">
+	function ConvertToCm()
+	// Assumes: inchBox contains a distance in inches
+	// Results: displays the distance in centimeters in outputDiv
+	{
+		var inches, cm;
+		
+		inches = parseFloat(document.getElementById('inchBox').value);
+		cm = InchesToCentimeters(inches);
+		document.getElementById('outputDiv').innerHTML =
+			'That is ' + cm + ' centimeters.';
+	}
+	</script>
+	
+	<script type="text/javascript">
+	function ConvertToInches()
+	// Assumes: centimeterBox contains a distance in centimeters
+	// Results: displays the distance in inches in outputDiv
+	{
+		var inches, cm;
+		
+		cm = parseFloat(document.getElementById('centimeterBox').value);
+		inches = CentimetersToInches(cm);
+		document.getElementById('outputDiv').innerHTML =
+			'That is ' + inches + ' inches.';
+	}
+	</script>
+	
+	<script type="text/javascript">
+	function ConvertToKilograms()
+	// Assumes: lbBox contains a weight in pounds
+	// Results: displays the weight in kilograms in outputDiv
+	{
+		var kg, lb;
+		
+		lb = parseFloat(document.getElementById('lbBox').value);
+		kg = PoundsToKilograms(lb);
+		document.getElementById('outputDiv').innerHTML =
+			'That is ' + kg + ' kilograms.';
+	}
+	</script>
+	
+	<script type="text/javascript">
+	function ConvertToPounds()
+	// Assumes: kgBox contains a weight in kilograms
+	// Results: displays the weight in pounds in outputDiv
+	{
+		var kg, lb;
+		
+		kg = parseFloat(document.getElementById('kgBox').value);
+		lb = KilogramsToPounds(kg);
+		document.getElementById('outputDiv').innerHTML =
+			'That is ' + lb + ' pounds.';
+	}
+	</script>
+	
+	<script type="text/javascript">
+	function ConvertToSquareFeet()
+	// Assumes: msqBox contains an area in square meters
+	// Results: displays the area in square feet in outputDiv
+	{
+		var msq, fsq;
+		
+		msq = parseFloat(document.getElementById('msqBox').value);
+		fsq = SquareMetersToSquareFeet(msq);
+		document.getElementById('outputDiv').innerHTML =
+			'That is ' + fsq + ' square feet.';
+	}
+	</script>
+	
+	<script type="text/javascript">
+	function ConvertToSquareMeters()
+	// Assumes: fsqBox contains an area in square feet
+	// Results: displays the area in square meters in outputDiv
+	{
+		var msq, fsq;
+		
+		fsq = parseFloat(document.getElementById('fsqBox').value);
+		msq = SquareFeetToSquareMeters(fsq);
+		document.getElementById('outputDiv').innerHTML =
+			'That is ' + msq + ' square meters.';
+	}
+	</script>
+ </head>
+ 
+ <body>
+		<p>
+		 Length in inches:
+			<input type="text" id="inchBox" size=6 value=1>
+			<input type="button" value="Convert to Centimeters"
+				onclick="ConvertToCm();">
+		</p>
+		<p>
+		 Length in centimeters:
+			<input type="text" id="centimeterBox" size=6 value=1>
+			<input type="button" value="Convert to Inches"
+				onclick="ConvertToInches();">
+		</p>
+		<p>
+		 Weight in pounds:
+			<input type="text" id="lbBox" size=6 value=1>
+			<input type="button" value="Convert to kilograms"
+				onclick="ConvertToKilograms();">
+		</p>
+		<p>
+		 Weight in kilograms:
+			<input type="text" id="kgBox" size=6 value=1>
+			<input type="button" value="Convert to pounds"
+				onclick="ConvertToPounds();">
+		</p>
+		<p>
+		 Area in square meters:
+			<input type="text" id="msqBox" size=6 value=1>
+			<input type="button" value="Convert to square feet"
+				onclick="ConvertToSquareFeet();">
+		</p>
+		<p>
+		 Area in square feet:
+			<input type="text" id="fsqBox" size=6 value=1>
+			<input type="button" value="Convert to square meters"
+				onclick="ConvertToSquareMeters();">
+		</p>
+		
+		<hr>
+		<div id="outputDiv"></div>
+ </body>
+ </html>
